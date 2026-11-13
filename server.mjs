@@ -10,6 +10,8 @@ const types = {
   '.css': 'text/css; charset=utf-8',
   '.js': 'text/javascript; charset=utf-8',
   '.json': 'application/json; charset=utf-8',
+  '.xml': 'application/xml; charset=utf-8',
+  '.txt': 'text/plain; charset=utf-8',
   '.png': 'image/png',
   '.jpg': 'image/jpeg',
   '.jpeg': 'image/jpeg',
@@ -20,11 +22,14 @@ const types = {
 
 http.createServer((req, res) => {
   const pathname = decodeURIComponent(new URL(req.url || '/', 'http://localhost').pathname);
-  const target = path.resolve(root, `.${pathname === '/' ? '/index.html' : pathname}`);
-  if (!target.startsWith(root + path.sep) && target !== path.join(root, 'index.html')) {
+  const requestedPath = path.resolve(root, `.${pathname === '/' ? '/index.html' : pathname}`);
+  if (!requestedPath.startsWith(root + path.sep) && requestedPath !== path.join(root, 'index.html')) {
     res.writeHead(403).end('Forbidden');
     return;
   }
+  const target = existsSync(requestedPath) && statSync(requestedPath).isDirectory()
+    ? path.join(requestedPath, 'index.html')
+    : requestedPath;
   if (!existsSync(target) || !statSync(target).isFile()) {
     res.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8' }).end('Not found');
     return;

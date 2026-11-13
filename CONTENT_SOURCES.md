@@ -35,3 +35,14 @@ A [landing page de referência fornecida pelo usuário](https://ponteodonto-2xxj
 Em 31/10/2026, o usuário forneceu o container `GTM-WZKT9QKC`, instalado na página com o carregador assíncrono no `<head>` e o fallback `<noscript>` no início do `<body>`. O site envia ao `dataLayer` o evento `lead_contact_click` com apenas `channel` (WhatsApp/telefone) e `placement` (posição do botão); não envia sintomas ou dados pessoais do paciente.
 
 O código do site foi conferido, mas o workspace administrativo do Tag Manager não foi acessado. Nenhuma tag de conversão do Google Ads ou Analytics foi criada ou confirmada nesse workspace. Portanto, os eventos estão disponíveis para configuração no GTM, mas isso, isoladamente, não comprova conversões. A gestão de consentimento e quaisquer tags adicionais também não foram configuradas nesta alteração.
+
+
+## Páginas de Clínica Geral e Urgência — revisão em 13 de novembro de 2026
+
+A identidade, contatos e dados locais foram conferidos na [landing page atual da Ponte São João](https://www.pontesaojoaoimplantes.com.br/). Ela informa o telefone (11) 96318-1163, endereço Av. São João, 627, Jundiaí–SP, atendimento particular e os horários regulares de segunda a sexta, 8h–18h, e sábado, 8h–13h.
+
+A página antiga de [Clínica Geral](https://www.pontesaojoaoodontologia.com.br/category/odontologia/clinica-geral/) descreve conteúdo de prevenção, higiene oral, cáries, doenças periodontais e consultas regulares. A nova página usa esses assuntos como temas para conversar com a equipe e esclarece que a avaliação profissional define a orientação; não promete diagnóstico ou resultado.
+
+A [página antiga de atendimento odontológico emergencial](https://www.pontesaojoaoodontologia.com.br/atendimento-odontologico-24-horas-emergencial/) lista dor intensa, fraturas/traumas e situações relacionadas a próteses como exemplos de urgência. A [página atual](https://www.pontesaojoaoimplantes.com.br/) informa urgência 24 horas mediante agendamento prévio pelo WhatsApp e confirmação de disponibilidade. Por isso, a nova landing page pede contato e confirmação antes do deslocamento e não afirma atendimento imediato ou ininterrupto.
+
+As novas rotas destinam-se a campanhas independentes: `/clinica-geral` e `/urgencia-odontologica`. Os CTAs usam o telefone oficial e mensagens que identificam o tema do contato. A página não configura campanhas, tags de conversão ou eventos de conversão no Google Ads; mantém o evento existente de clique de contato e seus parâmetros UTM.
